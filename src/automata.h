@@ -6,7 +6,7 @@
 /*   By: iboutadg <iboutadg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 23:20:56 by iboutadg          #+#    #+#             */
-/*   Updated: 2024/01/24 08:21:54 by iboutadg         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:12:35 by iboutadg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,12 @@ void		flour(t_vars *v);
 int	finish(t_vars *v);
 int	keyhook(int keycode, t_vars *v);
 int	mousehook(int button, int x, int y, t_vars *v);
-int	presshook1(int x, int y, t_vars *v);
-int	presshook2(int x, int y, t_vars *v);
-int	releasehook(int button, t_vars *v);
+int	presshook(int x, int y, t_vars *v);
 int	loophook(t_vars *v);
 //mlx functions
 int	init(t_vars *v);
 void	put_in_pixel(t_data *img, int x, int y, int c);
+//utils
 int	get_color(t_vars *v, int x, int y);
 int	random_color();
 
