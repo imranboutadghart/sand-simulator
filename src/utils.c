@@ -2,11 +2,11 @@
 
 int	random_color()
 {
-	int color;
+	static int color = 0;
 
-	color = 0;
-	while (!color || FLOOR == color)
-		color = rand() % 0xffffff;
+	color += ((rand() % 0x0a) << 16) + ((rand() % 0x0b) << 8) + (rand() % 0x0c);
+	if (!color || FLOOR == color)
+		color += ((rand() % 0x0a) << 16) + ((rand() % 0x0b) << 8) + (rand() % 0x0c);
 	return (color);
 }
 
