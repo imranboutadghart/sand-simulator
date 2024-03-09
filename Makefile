@@ -1,5 +1,5 @@
 CC := cc
-LIB := -lX11 -lXext -lmlx
+LIB := -lX11 -lXext
 CFLAGS := -Wall -Wextra
 SRC := $(wildcard src/*.c)
 OBJ := $(patsubst src/%.c, bin/%.o, $(SRC))
@@ -11,7 +11,7 @@ bin/%.o : src/%.c src/automata.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ) libmlx.a $(LIB)
 
 debug : CFLAGS += -g
 debug : fclean $(NAME)
